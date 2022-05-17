@@ -11,8 +11,7 @@ RUN curl https://downloads.apache.org/activemq/5.17.0/apache-activemq-5.17.0-bin
     | tar -xvz
 
 COPY activemq_prod.xml /apache-activemq-5.17.0/conf/activemq.xml
-COPY jetty_dev.xml /apache-activemq-5.17.0/conf/jetty.xml
-COPY activemq.service /etc/systemd/system
+COPY jetty_prod.xml /apache-activemq-5.17.0/conf/jetty.xml
 
 # Enable udevd so that plugged dynamic hardware devices show up in our container.
 ENV UDEV=1
