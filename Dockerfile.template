@@ -7,7 +7,7 @@ COPY ca-certificates.crt /etc/ssl/certs/
 
 # install ActiveMQ
 WORKDIR /
-RUN curl https://downloads.apache.org/activemq/5.17.0/apache-activemq-5.17.1-bin.tar.gz \
+RUN curl https://downloads.apache.org/activemq/5.17.1/apache-activemq-5.17.1-bin.tar.gz \
     | tar -xvz
 
 COPY activemq_prod.xml /apache-activemq-5.17.1/conf/activemq.xml
