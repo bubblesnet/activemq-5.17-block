@@ -9,9 +9,10 @@ services:
       context: .
       dockerfile: Dockerfile.template
 #    network_mode: "host"   Leave it off the host network to keep it private behind APIs
-#    ports:
-#      - "8161:8161"
-#      - "61613:61613"
+    ports:
+      - "8161:8161"
+      - "61611:61611"
+      - "61613:61613"
     restart: always
     volumes:
       - 'resin-data:/data'
