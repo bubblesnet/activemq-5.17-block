@@ -1,9 +1,12 @@
 # activemq-5.17-block
-A balena block that allows dropping activemq into a balena project
+A balena block that allows dropping activemq into a balena project.  The goal is to have an instance of activemq running in its own container, ready to go.
 
 This instance runs in its own container so it's run in console mode from the command line rather than as a service.  Thus, the start/stop/restart functionality of a service is not available.  Future versions maybe.
 
+This block WILL break when the Active MQ project bumps versions and my link to the download breaks. If I can find a permalink, I will update the project.
+
 Configuration files:
+
 The block copies all the files from a shared/persistent directory named /activemq_conf to the activemq configuration directory.
 If you want to override any of the activemq defaults, put the entire configuration file in the shared directory.  To automate this,
 have your own container copy the configuration file to the shared directory and have activemq DEPEND on that 
