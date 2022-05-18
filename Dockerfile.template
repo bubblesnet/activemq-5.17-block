@@ -19,7 +19,7 @@ ENV UDEV=1
 ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 
-CMD "cp /activemq_conf/* /apache-activemq-5.17.1/conf"
-CMD ["/apache-activemq-5.17.1/bin/activemq", "console"]
+CMD "cp /activemq_conf/* /apache-activemq-5.17.1/conf;/apache-activemq-5.17.1/bin/activemq console"
+# CMD ["/apache-activemq-5.17.1/bin/activemq", "console"]
 # CMD ["bash"]
 
