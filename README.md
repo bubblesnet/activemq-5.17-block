@@ -26,6 +26,8 @@ The files you might want to modify ..
 * activemq.xml - Port number and IP and logging
 * jetty_prod.xml - Port number and IP for admin console
 
+Samples of both files are included in the repo.
+
 Versions:
 * Debian Buster
 * OpenJDK 11
