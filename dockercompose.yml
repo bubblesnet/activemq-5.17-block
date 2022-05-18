@@ -12,10 +12,11 @@ services:
     ports:
       - "8161:8161"
       - "61611:61611"
+      - "61612:61612"
       - "61613:61613"
     restart: always
     volumes:
-      - 'resin-data:/data'
+      - 'resin-data:/activemq_conf'
     labels:
       io.balena.features.dbus: "1"
     cap_add:
