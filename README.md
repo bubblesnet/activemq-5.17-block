@@ -15,6 +15,7 @@ container in the dockercompose.yml file.  For example:
       - 'resin-data:/activemq_conf'
 
   activemq:
+    image: bh.cr/g_john_rodley1/activemq-5_17-block:aarch64
     volumes:
       - 'resin-data:/activemq_conf'
     depends-on:
