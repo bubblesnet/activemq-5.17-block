@@ -5,12 +5,22 @@ RUN install_packages vim wget
 
 COPY ca-certificates.crt /etc/ssl/certs/
 
+# Copy all the possible configuration files into image so that they can be
+# loaded into shared memory IFF they are not already present there.
+COPY activemq_prod.xml activemq_prod.xml
+COPY jetty_prod.xml jetty_prod.xml
+COPY activemq_test.xml activemq_test.xml
+COPY jetty_test.xml jetty_test.xml
+COPY activemq_dev.xml activemq_dev.xml
+COPY jetty_dev.xml jetty_dev.xml
+COPY activemq_ci.xml activemq_ci.xml
+COPY jetty_ci.xml jetty_ci.xml
+
 # install ActiveMQ
 WORKDIR /
 RUN curl https://downloads.apache.org/activemq/5.17.1/apache-activemq-5.17.1-bin.tar.gz \
     | tar -xvz
 
-# COPY activemq_prod.xml /apache-activemq-5.17.1/conf/activemq.xml
 COPY startserver.sh /
 RUN chmod +x /startserver.sh
 
@@ -19,6 +29,6 @@ ENV UDEV=1
 
 ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
-CMD ["/startserver.sh"]
-# CMD ["bash"]
+# CMD ["/startserver.sh"]
+CMD ["bash"]
 

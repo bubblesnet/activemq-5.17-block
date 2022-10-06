@@ -11,10 +11,14 @@ services:
 #    network_mode: "host"   Leave it off the host network to keep it private behind APIs
     ports:
       - "8161:8161"
+      - "8162:8162"
+      - "8163:8163"
+      - "8164:8164"
       - "61611:61611"
       - "61612:61612"
       - "61613:61613"
-    restart: always
+      - "61614:61614"
+      restart: always
     volumes:
       - 'resin-data:/activemq_conf'
     labels:
