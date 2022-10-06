@@ -25,25 +25,25 @@ ls -al /activemq_conf/conf
 case $NODE_ENV in
 PRODUCTION|production)
 echo NODE_ENV=$NODE_ENV Copying $NODE_ENV configuration files into place
-cp /activemq_conf/conf/activemq_prod.xml /apache-activemq-5.17.1/conf/activemq.xml
-cp /activemq_conf/conf/jetty_prod.xml /apache-activemq-5.17.1/conf/jetty.xml
+cp /activemq_conf/conf/activemq_prod.xml /apache-activemq-5.17.2/conf/activemq.xml
+cp /activemq_conf/conf/jetty_prod.xml /apache-activemq-5.17.2/conf/jetty.xml
 ;;
 DEVELOPMENT|development)
 echo NODE_ENV=$NODE_ENV Copying $NODE_ENV configuration files into place
-cp /activemq_conf/conf/activemq_dev.xml /apache-activemq-5.17.1/conf/activemq.xml
-cp /activemq_conf/conf/jetty_dev.xml /apache-activemq-5.17.1/conf/jetty.xml
+cp /activemq_conf/conf/activemq_dev.xml /apache-activemq-5.17.2/conf/activemq.xml
+cp /activemq_conf/conf/jetty_dev.xml /apache-activemq-5.17.2/conf/jetty.xml
 ;;
 TEST|test)
 echo NODE_ENV=$NODE_ENV Copying $NODE_ENV configuration files into place
-cp /activemq_conf/conf/activemq_test.xml /apache-activemq-5.17.1/conf/activemq.xml
-cp /activemq_conf/conf/jetty_test.xml /apache-activemq-5.17.1/conf/jetty.xml
+cp /activemq_conf/conf/activemq_test.xml /apache-activemq-5.17.2/conf/activemq.xml
+cp /activemq_conf/conf/jetty_test.xml /apache-activemq-5.17.2/conf/jetty.xml
 ;;
 CI|ci)
 echo NODE_ENV=$NODE_ENV Copying $NODE_ENV configuration files into place
-cp /activemq_conf/conf/activemq_ci.xml /apache-activemq-5.17.1/conf/activemq.xml
-cp /activemq_conf/conf/jetty_ci.xml /apache-activemq-5.17.1/conf/jetty.xml
+cp /activemq_conf/conf/activemq_ci.xml /apache-activemq-5.17.2/conf/activemq.xml
+cp /activemq_conf/conf/jetty_ci.xml /apache-activemq-5.17.2/conf/jetty.xml
 ;;
 esac
 
 
-/apache-activemq-5.17.1/bin/activemq console
+/apache-activemq-5.17.2/bin/activemq console
