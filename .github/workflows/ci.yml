@@ -1,0 +1,35 @@
+name: activemq-ci
+on:
+  push:
+    branches:
+      - main
+      - develop
+  schedule:
+    - cron:  '33 06 * * *'
+
+jobs:
+  # Label of the runner job
+  runner-job:
+    # You must use a Linux environment when using service containers or container jobs
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        activemq-version: [5.16.5, 5.17.2, 5.17.3]
+
+    steps:
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      # Performs a clean installation of ActiveMQ
+      - name: "Install ActiveMQ ${{matrix.activemq-version}}"
+        run: |
+          wget https://archive.apache.org/dist/activemq/${{matrix.activemq-version}}/apache-activemq-${{matrix.activemq-version}}-bin.tar.gz >/dev/null 2> /dev/null
+          tar zxf apache-activemq-${{matrix.activemq-version}}-bin.tar.gz
+          rm ./apache-activemq-${{matrix.activemq-version}}-bin.tar.gz
+        working-directory: .
+
+
+
+
